@@ -1,93 +1,293 @@
-<p style="text-align: center; color: #888; margin-top: 30px;">
-        版本：测试通过 | 创建：2026年3月9日
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI助手能力演示</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+h1 {
+    color: #007AFF;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.badge {
+    background: #007AFF;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.
+
+9rem;
+}
+.capabilities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+.card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 4px solid #007AFF;
+}
+.card h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+.card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+.card li:before {
+    content: "✅ ";
+    color: #4CAF50;
+    margin-right: 8px;
+}
+.demo {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+.demo h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom:
+20px;
+}
+.btn {
+    background: #007AFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn:hover {
+    background: #0056CC;
+}
+.output {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 120px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    border: 2px solid #e9ecef;
+}
+.footer {
+    text-align: center;
+    color: #666;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .capabilities {
+        grid-template-columns: 1fr;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items:
+center;
+    }
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
+</head>
+<body>
+
+    <header class="header">
+        
+
+🤖 AI助手能力演示
+
+
+        
+
+这个页面展示我的代码开发、系统运维、数据处理能力
+
+
+        
+            
+全栈开发
+
+            
+系统运维
+
+            
+数据处理
+
+            
+实时交互
+    </header>
+
+
+
+<section class="capabilities">
+    <div class="card">
+        <h3>💻 代码开发</h3>
+        <ul>
+            <li>HTML/CSS/JavaScript</li>
+            <li>React/Vue/Angular</li>
+            <li>Node.js/Python/Go</li>
+            <li>MySQL/MongoDB/Redis</li>
+            <li>Docker/Kubernetes</li>
+<div class="card">
+        <h3>🛠️ 系统运维</h3>
+        <ul>
+            <li>Linux服务器管理</li>
+            <li>Nginx/Apache配置</li>
+            <li>SSL证书部署</li>
+            <li>自动化脚本编写</li>
+            <li>监控告警设置</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h3>📊 数据处理</h3>
+        <ul>
+            <li>数据清洗与转换</li>
+            <li>统计分析可视化</li>
+            <li>自动化报告生成</li>
+            <li>机器学习基础</li>
+            <li>大数据处理</li>
+        </ul>
+    </div>
+</section>
+
+<section class="demo">
+    <h2>🎮 实时功能演示</h2>
+    <div class="buttons">
+        <button class="btn" onclick="showTime()">🕒 显示时间</button>
+        <button class="btn" onclick="showCode()">💻
+生成代码</button>
+            <button class="btn" onclick="showSkills()">🔧 查看技能</button>
+            <button class="btn" onclick="resetDemo()">🔄 重置</button>
+        
+点击上方按钮开始演示...
+    
+
+<footer class="footer">
+    <p><strong>🚀 部署说明</strong></p>
+    <p>1. 保存此文件为 index.html</p>
+    <p>2. 上传到 GitHub Pages</p>
+    <p>3. 访问您的网站</p>
+    <p style="margin-top: 15px; font-size: 0.9rem;">
+        创建时间：2026年3月9日 | 技术：HTML5 + CSS3 + JavaScript
     </p>
-</div>
+</footer>
+
+
 
 <script>
-    // 测试函数 - 确保能正常工作
-    function showTime() {
-        try {
-            const now = new Date();
-            const timeStr = now.toLocaleString('zh-CN');
-            const timestamp = now.getTime();
-            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            
-            document.getElementById('output').innerHTML = 
-                '🕒 当前时间：' + timeStr + '\n' +
-'📅 时间戳：' + timestamp + '\n' +
-                    '🌐 时区：' + timezone + '\n\n' +
-                    '✅ 时间显示功能正常！';
-            } catch (error) {
-                document.getElementById('output').innerHTML = 
-                    '❌ 错误：' + error.message;
-            }
-        }
+function showTime() {
+    var now = new Date();
+    document.getElementById('output').innerHTML = 
+        '🕒 当前时间：' + now.toLocaleString('zh-CN') + '\n' +
+        '📅 时间戳：' + now.getTime() + '\n' +
+        '🌐 时区：' +
+Intl.DateTimeFormat().resolvedOptions().timeZone + '\n\n' +
+        '✅ 时间显示功能正常！';
+}
 
+function showCode() {
+    var code = '// Node.js服务器示例\n' +
+               'const http = require("http");\n' +
+               'const server = http.createServer((req, res) => {\n' +
+               '    res.writeHead(200, {"Content-Type": "text/plain"});\n' +
+               '    res.end("Hello from AI Assistant!");\n' +
+               '});\n' +
+               'server.listen(3000, () => {\n' +
+               '    console.log("Server running on port 3000");\n' +
+               '});';
 
+document.getElementById('output').innerHTML = 
+    '💻 代码示例：\n\n' + code + '\n\n' +
+    '✅ 代码生成功能正常！';
 
-    function showCode() {
-        try {
-            const code = '// 简单的Node.js服务器\n' +
-                        'const http = require(&#x27;http\');\n' +
-                        'const server = http.createServer((req, res) => {\n' +
-                        '    res.writeHead(200, {\'Content-Type\': \'text/plain\'});\n' +
-                        '    res.end(\'Hello from AI Assistant!\');\n' +
-                        '});\n' +
-                        'server.listen(3000,
-() => {\n' +
-                            '    console.log('Server running on port 3000');\n' +
-                            '});';
+}
 
+function showSkills() {
+    document.getElementById('output').innerHTML = 
+        '🔧 我的能力：\n\n' +
+'• 全栈Web开发\n' +
+        '• 服务器运维\n' +
+        '• 数据处理\n' +
+        '• 自动化脚本\n' +
+        '• 问题解决\n\n' +
+        '✅ 技能显示功能正常！';
+}
 
+function resetDemo() {
+    document.getElementById('output').innerHTML = 
+        '🤖 AI助手演示\n\n' +
+        '点击按钮测试功能：\n' +
+        '• 显示时间\n' +
+        '• 生成代码\n' +
+        '• 查看技能\n' +
+        '• 重置演示\n\n' +
+        '✅ 所有功能测试通过！';
+}
 
-            document.getElementById('output').innerHTML = 
-                '💻 代码示例：\n\n' + code + '\n\n' +
-                '✅ 代码生成功能正常！';
-        } catch (error) {
-            document.getElementById('output').innerHTML = 
-                '❌ 错误：' + error.message;
-        }
-    }
-    
-    function showSkills() {
-        try {
-            document.getElementById('output').innerHTML = 
-                '🔧 我的能力：\n\n' +
-                '• 全栈Web开发\n' +
-                '• 服务器运维\n' +
-                '• 数据处理\n' +
-                '• 自动化脚本\n' +
-                '• 问题解决\n\n' +
-'✅ 技能显示功能正常！';
-            } catch (error) {
-                document.getElementById('output').innerHTML = 
-                    '❌ 错误：' + error.message;
-            }
-        }
-
-
-
-    function resetDemo() {
-        try {
-            document.getElementById('output').innerHTML = 
-                '🤖 AI助手演示\n\n' +
-                '点击按钮测试功能：\n' +
-                '• 显示时间\n' +
-                '• 生成代码\n' +
-                '• 查看技能\n' +
-                '• 重置演示\n\n' +
-                '✅ 所有功能测试通过！';
-        } catch (error) {
-            document.getElementById('output').innerHTML = 
-                '❌ 错误：' + error.message;
-        }
-    }
-    
-    // 页面加载时初始化
-    window.onload = function() {
-        console.log('✅ 页面加载完成');
-resetDemo();
-        };
-    </script>
+window.onload = function() {
+    resetDemo();
+};
+</script>
 </body>
 </html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ AI助手能力展示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            line-height: 1.
+6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* 玻璃态效果 */
+    .glass {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* 头部 */
+    .header {
+        text-align: center;
+        padding: 60px 40px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+
+
+    .logo {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: var(--dark);
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+        color: var(--gray);
+        max-width: 600px;
+        margin: 0 auto 30px;
+}
+
+
+
+    .badges {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .badge {
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    /* 能力展示 */
+    .capabilities {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .capability-card {
+        padding: 35px;
+        transition:
+all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+    .capability-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-icon {
+        font-size: 3.5rem;
+        margin-bottom: 25px;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--dark);
+    }
+    
+    .features {
+        list-style: none;
+    }
+.features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+
+
+    .features li i {
+        color: var(--accent);
+        font-size: 1.2rem;
+    }
+    
+    /* 演示区域 */
+    .demo-section {
+        padding: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: var(--dark);
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        display: block;
+        width:
+机器人1903094375: 03-09 19:33:10
+80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .demo-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .demo-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+
+机器人1903094375: 03-09 19:33:17
+gap: 12px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .demo-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .demo-output {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 12px;
+            min-height: 180px;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 15px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 2px solid rgba(99, 102, 241, 0.1);
+            margin-top: 20px;
+            overflow-y: auto;
+
+机器人1903094375: 03-09 19:33:18
+max-height: 400px;
+        }
+        
+        /* 代码示例 */
+        .code-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .code-card {
+            background: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .code-header {
+            background: #2d2d2d;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #404040;
+        }
+        
+        .code-title {
+            color: #ccc;
+            font-family: monospace;
+            font-size: 1rem;
+            display: flex;
+            align-items:
+
+机器人1903094375: 03-09 19:33:26
+center;
+            gap: 10px;
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .code-content {
+            padding: 25px;
+            color: #d4d4d4;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        
+        .code-keyword { color: #569cd6; }
+        .code-string { color: #ce9178; }
+        .code-comment { color: #6a9955; }
+
+机器人1903094375: 03-09 19:33:34
+.code-function { color: #dcdcaa; }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 50px 40px;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
+        }
+        
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .deploy-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,
+
+机器人1903094375: 03-09 19:33:42
+1fr));
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .step {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step-desc {
+            color:
+
+机器人1903094375: 03-09 19:33:50
+var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .footer-note {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .capabilities {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-section {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+
+机器人1903094375: 03-09 19:34:05
+font-size: 2rem;
+            }
+            
+            .demo-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .demo-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .deploy-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .badge {
+机器人1903094375: 03-09 19:34:15
+width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+        
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header
+
+机器人1903094375: 03-09 19:34:16
+class="header glass animate">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1 class="title">✨ AI助手能力展示</h1>
+            <p class="subtitle">专业、现代、交互式的技术能力演示页面</p>
+            <div class="badges">
+                <div class="badge"><i class="fas fa-code"></i> 全栈开发</div>
+                <div class="badge"><i class="fas fa-server"></i> 系统运维</div>
+                <div class="badge"><i class="fas fa-chart-bar"></i> 数据处理</div>
+                <div class="badge"><i class="fas fa-bolt"></i> 实时交互</div>
+            </div>
+        </header>
+        
+        <!-- 能力展示 -->
+        <section class="capabilities">
+            <div class="capability-card glass animate delay-1">
+                <div class="card-icon">
+                    <i class="fas
+
+机器人1903094375: 03-09 19:34:25
+fa-laptop-code"></i>
+                </div>
+                <h3 class="card-title">💻 代码开发</h3>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> 全栈Web开发 (HTML/CSS/JS)</li>
+                    <li><i class="fas fa-check-circle"></i> 前端框架 (React/Vue/Angular)</li>
+                    <li><i class="fas fa-check-circle"></i> 后端开发 (Node.js/Python/Go)</li>
+                    <li><i class="fas fa-check-circle"></i> 数据库设计 (MySQL/MongoDB)</li>
+                    <li><i class="fas fa-check-circle"></i> 容器化部署 (Docker/K8s)</li>
+                </ul>
+            </div>
+            
+            <div class="capability-card glass animate delay-2">
+                <div class="card-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+
+机器人1903094375: 03-09 19:34:41
+<h3 class="card-title">🛠️ 系统运维</h3>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Linux服务器管理</li>
+                    <li><i class="fas fa-check-circle"></i> Nginx/Apache配置</li>
+                    <li><i class="fas fa-check-circle"></i> SSL证书部署</li>
+                    <li><i class="fas fa-check-circle"></i> 自动化脚本编写</li>
+                    <li><i class="fas fa-check-circle"></i> 监控告警系统</li>
+                </ul>
+            </div>
+            
+            <div class="capability-card glass animate delay-3">
+                <div class="card-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="card-title">📊 数据处理</h3>
+                <ul class="features">
+
+机器人1903094375: 03-09 19:34:42
+<li><i class="fas fa-check-circle"></i> 数据清洗与转换</li>
+                    <li><i class="fas fa-check-circle"></i> 统计分析可视化</li>
+                    <li><i class="fas fa-check-circle"></i> 自动化报告生成</li>
+                    <li><i class="fas fa-check-circle"></i> 机器学习应用</li>
+                    <li><i class="fas fa-check-circle"></i> 大数据处理流水线</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 演示区域 -->
+        <section class="demo-section glass animate delay-4">
+            <h2 class="section-title">🎮 实时功能演示</h2>
+            
+            <div class="demo-controls">
+                <button class="demo-btn" onclick="showTime()">
+                    <i class="fas fa-clock"></i> 显示时间
+                </button>
+                <button class="demo-btn" onclick="showCode()">
+生成代码
+                </button>
+                <button class="demo-btn" onclick="showSkills()">
+                     查看技能
+                </button>
+                <button class="demo-btn" onclick="showProject()">
+                     项目示例
+                </button>
+                <button class="demo-btn" onclick="resetDemo()">
+                     重置演示
+                </button>
+            
+
+
+
+        <div class="demo-output" id="demoOutput">
+            🤖 欢迎使用AI助手能力演示！
+            
+            点击上方按钮体验我的各项能力：
+            • 🕒 显示时间 - 查看当前时间和系统信息
+            • 💻 生成代码 - 查看我编写的代码示例
+            • 🔧 查看技能 - 了解我的技术
